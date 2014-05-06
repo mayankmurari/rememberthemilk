@@ -5,7 +5,8 @@ gem 'rails', '4.0.4'
 gem 'haml-rails'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
+
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
@@ -54,6 +55,9 @@ group :production do
   gem 'rails_12factor', '0.0.2'
 end
 
+group :development do 
+  gem 'sqlite3'
+end  
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
