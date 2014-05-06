@@ -1,0 +1,3 @@
+class Sent < Task
+  
+end

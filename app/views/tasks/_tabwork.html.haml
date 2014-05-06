@@ -1,0 +1,67 @@
+.form_actions
+  %form
+    %div.moreactions
+      .btn-group
+= form_for (@task), :html=> {:id => 'task_form_w'}, remote: true do |f|
+  .field.clearfix
+    = f.text_field :content, :placeholder => "<< Add a new task", :id=>"task_contentw", :class=>"contentarea",
+      :autocomplete => :off
+    = f.hidden_field :type, { :value => "Work"}
+    / = f.submit 'Create Task', id: 'task_form_work_submit', :class => "create_task_button"
+%ul#work.tasklist
+= form_tag complete_tasks_path, :id => 'complete_form_work' do  
+  = submit_tag "Complete", class: "completebutton", :name => 'completebutton'
+  = submit_tag "Postpone", class: "postponebutton", :name => 'postponebutton'
+  = submit_tag "Delete", class: "submitbutton", :name => 'deletebutton', :method => :delete
+  %li.dropdown
+  %adrpdown#drop6.moreactions{"data-toggle" => "dropdown", href: "#", role: "button"}
+    More Actions..
+    %b.caret1
+  %ul#menu3.dropdown-menu.drpw{"aria-labelledby" => "drop6", role: "menu"}
+    %li{role: "presentation"}
+      %a.drpdown= submit_tag "Set Priority 1", :name => 'set1', id: 'set1', class: 'droplist'
+    %li{role: "presentation"}
+      %a.drpdown= submit_tag "Set Priority 2", :name => 'set2', id: 'set2', class: 'droplist'
+    %li{role: "presentation"}
+      %a.drpdown= submit_tag "Set Priority 3", :name => 'set3', id: 'set3', class: 'droplist'
+    %li.divider{role: "presentation"}
+    %li{role: "presentation"}
+      %a.drpdown= submit_tag "Move Up", :name => 'setup', id: 'setup', class: 'droplist'   
+    %li{role: "presentation"}
+      %a.drpdown= submit_tag "Move Down", :name => 'setdown', id: 'setdown', class: 'droplist' 
+    %li.divider{role: "presentation"}
+    %li{role: "presentation"}
+      %a.drpdown= submit_tag "Move to Inbox", :name => 'movetoinb', id: 'movetoinb', class: 'droplist' 
+    %li{role: "presentation"}
+      %a.drpdown= submit_tag "Move to Personal", :name => 'movetopers', id: 'movetopers', class: 'droplist'
+    %li{role: "presentation"}
+      %a.drpdown= submit_tag "Move to Work", :name => 'movetowork', id: 'movetowork', class: 'droplist'
+    %li{role: "presentation"}
+      %a.drpdown= submit_tag "Move to Study", :name => 'movetostd', id: 'movetostd', class: 'droplist'
+  %hr.seperator       
+  - @tasks.where(:type=> "Work").each do |task|
+    = check_box_tag "task_id[]", task.id 
+    %li.tasks{id: "taskw_#{task.id}"}
+      - if task.priority==1
+        %div.statusbar.prior1{id: "taskbar_#{task.id}"}
+      - elsif  task.priority==2
+        %div.statusbar.prior2{id: "taskbar_#{task.id}"}
+      - elsif  task.priority==3
+        %div.statusbar.prior3{id: "taskbar_#{task.id}"} 
+      - elsif  task.priority==0
+        %div.statusbar.prior0{id: "taskbar_#{task.id}"}  
+      %span#contenttext= task.content 
+= form_tag('/tasks', method: :get)      
+%li.dropdown.moreactions_sort
+  %a.drpdown#drop6.dropdown-toggle{"data-toggle" => "dropdown", href: "#", role: "button"}
+    Sort by...
+    %b.caret
+  %ul#menu.dropdown-menu.dropdown-pos{"aria-labelledby" => "drop6", role: "menu"}
+    %li{role: "presentation"}
+      %a.drpdown= submit_tag "priority", :name => 'setbyp', id: 'setp', class: 'droplist'
+    %li{role: "presentation"}
+      %a.drpdown= submit_tag "due date", :name => 'setbydate', id: 'setd', class: 'droplist'
+    %li{role: "presentation"}
+      %a.drpdown= submit_tag "name", :name => 'setbyname', id: 'setn', class: 'droplist'
+      
+   

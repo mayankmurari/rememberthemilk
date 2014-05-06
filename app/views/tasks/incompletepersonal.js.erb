@@ -1,0 +1,3 @@
+$('#personal').replaceWith('<%= escape_javascript(render(:partial => 'incompletepersonal')) %>');
+$("#inbox, #personal, #study").hide();
+$('li#cmptaskp').replaceWith('<%= escape_javascript(render(:partial => 'inctask')) %>');

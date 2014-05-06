@@ -1,0 +1,31 @@
+.form_actions
+  %div.moreactions 
+    .btn-group   
+           
+%ul#inboxinc.tasklist
+= form_tag incomplete_tasks_path, :id => 'complete_form_inb' do  
+  = submit_tag "Uncomplete", class: "uncompletebutton", :name => 'incompletebutton'
+  = submit_tag "Delete", class: "submitbutton", :name => 'indeletebutton', :method => :delete
+  %a.drpdown#drop.moreactions{"data-toggle" => "dropdown", href: "#", role: "button"}
+    More Actions
+    %b.caret
+    %ul#menu1.dropdown-menu{"aria-labelledby" => "drop", role: "menu"}
+      %li#set1li 
+        %a.drpdown= submit_tag "Move to Inbox", :name => 'inmovetoinb', id: 'movetoinb', class: 'droplist'
+        %a.drpdown= submit_tag "Move to Personal", :name => 'inmovetopers', id: 'movetopers', class: 'droplist'
+        %a.drpdown= submit_tag "Move to Work", :name => 'inmovetowork', id: 'movetowork', class: 'droplist'
+        %a.drpdown= submit_tag "Move to Study", :name => 'inmovetostd', id: 'movetostd', class: 'droplist'   
+    - @task.inboxcompleted.each do |task|
+      = check_box_tag "task_id[]", task.id
+      %li.tasks{id: "taski_#{task.id}"}
+        - if task.priority==1
+          %div.statusbar.prior1{id: "taskbar_#{task.id}"}
+        - elsif  task.priority==2
+          %div.statusbar.prior2{id: "taskbar_#{task.id}"}
+        - elsif  task.priority==3
+          %div.statusbar.prior3{id: "taskbar_#{task.id}"} 
+        %span#contenttext= task.content 
+
+
+  
+    

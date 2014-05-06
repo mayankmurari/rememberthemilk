@@ -1,0 +1,132 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.content {
+    color: #FFFFFF;
+    margin: 0 auto;
+    background-color: #005EBB;
+}
+.list {
+    float: left;
+}
+.carousel-control.left {
+    background-image: none;
+    background-repeat: no-repeat;
+}
+.carousel-control.right {
+    background-image: none;
+    background-repeat: no-repeat;
+}
+.page-header {
+    margin: 8px 0 20px;
+}
+.container {
+  width: 70%;
+}
+.top {
+  margin-top: 10px;
+}
+.crouseltext {
+  margin-top:100px;
+}
+.brands a {
+  margin:10px;
+}
+
+li.footer-nav  {
+  list-style:none;
+  margin-left:10px;
+}
+li.footer-nav ul li {
+  list-style:none;
+}
+.footnavtitle {
+  margin-left:40px;
+  color:#9A9CA0;
+  font-weight: bold;
+}
+.footnavtitle:hover {
+  margin-left:40px;
+  color:black;
+  font-weight: bold;
+}
+#footer-legal span.divider {
+    color: #EEEEEE;
+}
+hr {
+  border-top: 1px dotted #EEEEEE;
+  color: #fff;
+  height: 1px;
+  margin-top:10px;
+  margin-bottom:10px;
+}
+li.footer-nav ul li {
+  list-style: none outside none;
+  width: 100px;
+}
+li.footer-nav ul li a{
+  color:#9A9CA0;
+}
+li.footer-nav ul li a:hover{
+  color:#3782CC;
+}
+#footer-legal span.divider {
+  color: #EEEEEE;
+}
+<!-- -->
+// input, textarea, select, .uneditable-input {
+//   border: 1px solid #bbb;
+//   width: 100%;
+//   margin-bottom: 15px;
+// }
+
+input {
+  height: auto !important;
+}
+input, select, textarea, .uneditable-input {
+  border: 1px solid #BBBBBB;
+  display: block;
+  margin-bottom: 15px;
+  width: 90%;
+  border-radius: 5px;
+  box-shadow: 1px 1px 0 1px #999 inset;
+}
+
+::-moz-placeholder {  
+   text-align:right;  
+   font-size: 10px;
+}
+::-webkit-input-placeholder {
+   text-align:right;
+   font-size: 10px;
+}
+
+.signup.btn-primary {
+  background-color: white;
+  border-color: #357EBD;
+  color: #FFFFFF;
+}
+.signup.btn-primary:hover {
+  background-color: white;
+  border-color: #357EBD;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+.createbutton {
+  margin-bottom: 20px;
+}
+.signup {
+  font-size:20px;
+  text-decoration:underline;
+  margin-left:160px;
+}
+#task_type {
+  display: none;
+}

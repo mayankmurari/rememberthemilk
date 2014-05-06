@@ -1,0 +1,3 @@
+class All < Task
+  
+end

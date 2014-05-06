@@ -1,0 +1,15 @@
+$('#inbox').replaceWith('<%= escape_javascript(render(:partial => 'incomplete')) %>');
+$("#inbox, #personal, #study").hide();
+$('li#cmptaski').replaceWith('<%= escape_javascript(render(:partial => 'inctask')) %>');
+
+
+
+  
+
+
+
+
+
+
+
+

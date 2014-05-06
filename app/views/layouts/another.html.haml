@@ -1,0 +1,54 @@
+!!!
+%html
+  %head
+    %title Rememberthemilk
+    = stylesheet_link_tag    "application", media: "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    .inner-page-header
+      .container
+        %span#viewSelector.pull-right
+          = current_user.email
+          |
+          \#{link_to "Overview", overview_path, class: cp(overview_path)} 
+          |
+          \#{link_to "Tasks", tasks_path, class: cp(tasks_path)} 
+          |
+          \#{link_to "Location", locations_path, class: cp(locations_path)} 
+          |
+          %a{href: "#section.contacts"} Contacts
+          |
+          %a{href: "#section.settings"} Settings
+          |
+          %a{href: "/help/", target: "_blank"} Help
+          |
+          \#{link_to "Sign out", destroy_user_session_path, method: "delete"}
+    .container
+      .header
+        = image_tag 'logo2.png'
+        %p#notice= flash[:notice] 
+      .pull-right.time
+        %span.time= Time.now.strftime("%A, %d, %B, %Y | %I:%M ")
+        %input.form-control{placeholder: "Search...", type: "text"}/
+        
+    = yield
+    .container
+      %p.footertext NEWPro  Has RTM made you more organized and productive? 
+      %a{href: "#"}Upgrade to Pro and support RTM.
+      .appfootercontent
+        %a{href: "/about/", target: "_blank"} About
+        |
+        %a{href: "http://blog.rememberthemilk.com/", target: "_blank"} Blog
+        |
+        %a{href: "/services/", target: "_blank"} Apps
+        |
+        %a{href: "/forums/", target: "_blank"} Forums
+        |
+        %a{href: "/help/", target: "_blank"} Help
+        |
+        %a{href: "/help/contact/", target: "_blank"} Contact Us
+        |
+        %a{href: "/help/terms.rtm", target: "_blank"} Terms of Use
+        |
+        %a{href: "/help/privacy.rtm", target: "_blank"} Privacy Policy

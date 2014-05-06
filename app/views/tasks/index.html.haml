@@ -1,0 +1,42 @@
+.container
+  .row
+    .col-md-8
+      %ul.nav.nav-tabs
+        %li.active
+          %a#inb.tabs{"data-toggle" => "tab", href: "#inbox"} Inbox
+        %li
+          %a#per.tabs{"data-toggle" => "tab", href: "#personal"} Personal
+        %li
+          %a#std.tabs{"data-toggle" => "tab", href: "#study"} Study
+        %li
+          %a#wrk.tabs{"data-toggle" => "tab", href: "#work"} Work
+        %li
+          %a#snt.tabs{"data-toggle" => "tab", href: "#sent"} Sent
+        %li
+          %a#al.tabsall{"data-toggle" => "tab", href: "#all"} All Tasks
+      .tab-content.hometabs
+        #inbox.tab-pane.active= render 'tabinbox'
+        #personal.tab-pane= render 'tabpersonal'
+        #study.tab-pane= render 'tabstudy'
+        #work.tab-pane= render 'tabwork'
+        #sent.tab-pane= render 'tabsent'
+        #all.tab-pane= render 'taball'
+    .col-md-4
+      %ul.nav.nav-tabs
+        %li.active
+          %a.sidetabs{"data-toggle" => "tab", href: "#list"} List
+        %li
+          %a.sidetabs{"data-toggle" => "tab", href: "#share"} Share
+        %li
+          %a.sidetabs{"data-toggle" => "tab", href: "#publish"} Publish
+      .tab-content.hometabside
+        #list.tab-pane.active= render 'list'
+        #share.tab-pane
+        #publish.tab-pane
+      .col-md-12.inbsidebar
+        %p{style: "padding:5px;"} The Inbox is just like your email inbox - except that instead of emails, you'll receive tasks. Learn more about the Inbox.
+        %div
+      .col-md-12.inbsidebar
+        %span= Task.where(:type=>"Inbox").count
+        %span task selected
+        %div  

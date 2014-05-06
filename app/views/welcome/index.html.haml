@@ -1,0 +1,59 @@
+.content
+  .container.top
+    .row
+      .col-md-4.col-sm-4.col-xs-4
+        = image_tag 'hp_list.png'
+      .col-md-8.col-sm-8.col-xs-8
+        %h1 The best way to manage your tasks
+        %h4 Never forget the milk(or anything else) again
+        .signup.btn.btn-primary.btn-large= link_to 'SignUp Now!', new_user_registration_path
+.container.top
+  #myCarousel.carousel.slide
+    %ol.carousel-indicators
+      %li{"data-slide-to" => "0", "data-target" => "#myCarousel"}
+      %li.active{"data-slide-to" => "1", "data-target" => "#myCarousel"}
+      %li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
+    .carousel-inner
+      .item.row{style: "min-height:350px;"}
+        = image_tag('img1.jpg', :class=> "pull-right col-md-6")
+        .col-md-6.col-sm-6.col-xs-6
+          %h2.crouseltext Now available for android tablets too
+      .item.active.row{style: "min-height:350px;"}
+        = image_tag 'img2.png', :class=> "pull-right col-md-6"
+        .col-md-6.col-sm-6.col-xs-6
+          %h2.crouseltext Manage your evernote reminders with remember the milk
+          %a Learn More
+      .item.row{style: "min-height:350px;"}
+        = image_tag 'img4.jpg',:class=> "pull-right col-md-6"
+        .col-md-6.col-sm-6.col-xs-6
+          %h2.crouseltext Meet our all new i-phone app
+    %a.left.carousel-control{"data-slide" => "prev", href: "#myCarousel"} ‹
+    %a.right.carousel-control{"data-slide" => "next", href: "#myCarousel"} ›
+%hr/
+.container.col-md-offset-4.col-xs-offset-4.col-sm-offset-4
+  %div
+    %h3 Remember The Milk is also available for...
+    .brands
+      %a{href: "/services/gmail/"}
+        = image_tag 'hp_logo_gmail.png'
+      %a{href: "/services/googlecalendar/"}
+        = image_tag 'hp_logo_googlecalendar.png'
+      %a{href: "/services/milksync/outlook/"}
+        = image_tag 'hp_logo_microsoftoutlook.png'
+    .brands{style: "padding-top: 4px;"}
+      %a{href: "/services/twitter/"}
+        = image_tag 'hp_logo_twitter.png'
+      %a{href: "/services/evernote/"}
+        = image_tag 'hp_logo_evernote.png'
+    .brands{style: "padding-top: 23px;"}
+      %a{href: "http://itunes.apple.com/app/remember-the-milk/id293561396?mt=8"}
+        = image_tag 'ico_app_store.png'
+      %a{href: "http://play.google.com/store/apps/details?id=com.rememberthemilk.MobileRTM"}
+        = image_tag 'ico_googleplay.png'
+      %a{href: "http://appworld.blackberry.com/webstore/content/27655061"}
+        = image_tag 'ico_blackberryworld.png'
+%hr/
+.container
+  .col-md-offset-2.col-sm-offset-2.col-xs-offset-2
+    %h2 "Remember The Milk reinvents the to-do list"
+    = link_to 'Sign up now for a free account', new_user_registration_path, :class=>"signup"

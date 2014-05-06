@@ -1,0 +1,366 @@
+// Place all the styles related to the Tasks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+a {
+  font-size: 10px;
+}
+input, textarea, select, .uneditable-input {
+  margin-right: 10px;
+}
+
+li {
+ list-style: none; 
+}
+.contentarea {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 10px;
+  margin-top: 65px;
+  padding-left: 8px;
+  width: 600px;
+  padding-right: 10px;
+}
+span#viewSelector {
+  margin-top: 10px;
+}
+span#viewSelector a {
+  color: #3E60BF;
+  font-weight: bold;
+  font-size: 11px;
+  text-decoration: underline;
+}
+div.appfootercontent a {
+  color: #3E60BF;
+  text-decoration: underline;
+}  
+.footertext {
+  font-size: 11px;
+  display: inline;
+}
+.tabs {
+  background-color: #D5D5D5;
+  height: 22px;
+}
+.tabsall {
+  background: url("./right_blue.png") no-repeat right top;
+  height: 22px;
+}
+
+.sidetabs {
+  background-color: #D5D5D5;
+  height: 22px;
+  margin-left: 10px;
+}
+.field {
+  border-bottom: 1px solid #CACACA;
+
+}
+.form_actions {
+    padding-left: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.hometabs {
+  border: 1px solid #DDDDDD;
+  min-height: 150px;
+}
+.hometabside {
+  border: 1px solid #DDDDDD;
+  min-height: 200px;
+  background-color: #F9F9F9
+}
+#list > ul {
+  margin-left: -30px;
+  margin-top: 10px;
+  float: left;
+  display: inline;
+}
+.noteaddicon {
+  cursor: pointer;
+  vertical-align: bottom;
+}
+.icon {
+  padding-left:1px; 
+  padding-right:1px;
+}
+.icontext{
+  font-weight: bold; 
+  padding-left: 4px; 
+  font-size: 0.95em; 
+  vertical-align: bottom;
+  color: #0060C1;
+  font-size: 10px;
+}
+ul#listicon {
+  float:right;
+  padding-right: 10px;
+}
+input[id^=taski] {
+  width: 10px;
+}
+
+input[id^=task_id] {
+  float: left;
+  margin-left: 28px;
+  margin-right: 21px !important;
+  margin-top: 10px;
+  width: 12px;
+}
+input[id^=chki_] {
+  width: 10px;
+  float: left;
+  margin-left: 12px;
+  margin-right: 22px !important;
+  margin-top: 10px;
+}
+input[id^=chkp_] {
+  width: 10px;
+  float: left;
+  margin-left: 12px;
+  margin-right: 22px !important;
+  margin-top: 10px;
+}
+input[id^=chks_] {
+  width: 10px;
+  float: left;
+  margin-left: 12px;
+  margin-right: 22px !important;
+  margin-top: 10px;
+}
+input[id^=chkw_] {
+  width: 10px;
+  float: left;
+  margin-left: 12px;
+  margin-right: 22px !important;
+  margin-top: 10px;
+}
+.show_chkbox {
+  height: 10px;
+  width: 10px;
+  float: left;
+  margin-right: 10px !important;
+}
+.create_task_button {
+  margin-left: 18px;
+}
+.moreactions {
+  left: 200px;
+  position: absolute;
+  top: 45px;
+  width: 150px;
+  border: 1px solid #BBBBBB;
+  border-radius: 6px;
+  padding-left : 8px;
+  background-color: #ECECEC; 
+}
+.submitbutton {
+  width: 78px;
+  position: absolute;
+  top: 45px;
+  left: 355px;
+}
+.btnmore {
+  margin-left: 185px !important;
+}
+li.tasks {
+  padding-left: 18px;
+  height: 32px;
+}
+#infoinb li {
+  font-size: 11px;
+}
+.completebutton {
+  width: 78px;
+  position: absolute;
+  top: 45px;
+  left: 115px;
+  display: block;
+}
+.postponebutton {
+  width: 78px;
+  position: absolute;
+  top: 45px;
+  left: 30px;
+  display: block;
+}
+
+.tasks {
+  background-color: #F9F9F9;
+  border-bottom: 1px solid #CACACA;
+}
+.tasks:hover {
+  background-color: #E8EEF7;
+  border-bottom: 1px solid #CACACA;
+}
+.tasksclick {
+  background-color: #FFFFCC !important; 
+  border-bottom: 1px solid #808080;
+}
+
+.droplist {
+  background: none;
+  border: none;
+  border-radius: none;
+  box-shadow: none;
+  display: block;
+  margin-bottom: 15px;
+  text-align: left;
+}
+.dropdown-menu {
+  left: 30%;
+  top: 28%;
+}
+.drpi {
+  left: 30%;
+  top: 34%;
+}
+.drpp {
+  left: 30%;
+  top: 29%;
+}
+.drpw {
+  left: 30%;
+  top: 26%;
+}
+.drps {
+  left: 30%;
+  top: 26%;
+}
+.drpall {
+  left: 30%;
+  top: 15%;
+}
+#contenttext {
+  margin-left: -14px;
+  position: relative;
+  top: 6px;
+}
+#inb {
+  padding-top: auto;
+  padding-bottom: auto;
+  margin-left: 10px;
+}
+.statusbar {
+  height: 32px;
+  width: 10px;
+  margin-left: -60px;
+  display: inline;
+  float: left;
+  border-bottom: 1px solid #CACACA;
+  border-right: 1px solid #CACACA;
+}
+.prior1 {
+  background-color: #EA5200;
+}
+.prior2 {
+  background-color: #0060BF;
+}
+.prior3 {
+  background-color: #359AFF;
+}
+.prior0 {
+  background-color: none;
+}
+.inbsidebar {
+  border:1px solid #DDDDDD;
+  margin:5px;
+  border-radius:5px;
+}
+.moreactions_sort {
+  background-color: #F0F0F0;
+  border: 1px solid #BBBBBB;
+  border-radius: 3px;
+  position: absolute;
+  top: 35px;
+  left: 580px;
+  width: 70px;
+}
+.dropdown_sort {
+  left: 40%;
+  top: 15%;
+}
+.droplistsort {
+  background: none;
+  border: none;
+  border-radius: none;
+  box-shadow: none;
+  display: block;
+  margin-bottom: 15px;
+}
+.dropdown-pos {
+  left: -70%;
+  top: 81%;
+}
+.drpdown {
+  color: black;
+}
+.uncompletebutton {
+  width: 95px;
+  position: relative;
+  margin-top: 20px;
+  left: 20px;
+  display: block;
+}
+hr.seperator {
+  border-top: 1px solid #CACACA;
+}
+.listcontent {
+  color: #0060BF;
+  font-weight: bold;
+}
+.current {
+  color: black !important;
+  text-decoration: none !important;
+}
+hr.seperator {
+  color: #000000;
+  position: relative;
+  top: -50px;
+}
+ul#inbox {
+  margin-bottom: -22px;
+}
+ul#personal {
+  margin-bottom: -22px;
+}
+ul#work {
+  margin-bottom: -22px;
+}
+ul#study {
+  margin-bottom: -22px;
+}
+ul#all {
+  margin-bottom: -22px;
+}
+a#inb {
+  color: #000;
+}
+.caret1 {
+  border-left: 4px solid rgba(0, 0, 0, 0);
+  border-right: 4px solid rgba(0, 0, 0, 0);
+  border-top: 4px solid;
+  display: inline-block;
+  height: 0;
+  margin-left: 25px;
+  vertical-align: middle;
+  width: 0;
+}
+.contentglow {
+  box-shadow: 2px 2px 2px #8CC718 inset;
+}
+.flash {
+  background-color: #DBEDB7;
+}
+#loading-indicator {
+  position: absolute;
+  left: 300px;
+  top: 58px;
+ }
+.arrow {
+    background: url("./ico_arr.gif") no-repeat scroll 3px center rgba(0, 0, 0, 0);
+}
+
+
+
+
+

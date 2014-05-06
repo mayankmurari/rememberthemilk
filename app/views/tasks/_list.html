@@ -1,0 +1,94 @@
+<ul id="listinb">
+  <li class="listcontent">Inbox</li>
+  <li id="task_inbox">
+    (<%=@tasks.where(:type=> "Inbox").count %> tasks)
+  </li>
+  <li>
+    (<%=@tasks.where(:type=> "Inbox",:postpone => Time.now + 0.day).count %> due today)
+  </li>
+  <li>
+    (<%=@tasks.where(:type=> "Inbox",:postpone => Time.now + 1.day).count %> due tomorrow)
+  </li>
+  <li id="cmptaski">
+    <%= link_to 'Completed', incomplete_tasks_path, remote: true, method: :post, :id => 'inbinc'%>
+    (<%=@tasks.where(:type=> "Inbox",:completed => true).count %> )
+    <% hidden_field :type, { :value => "Inbox"} %>
+  </li>
+</ul>
+
+<ul id="listper" style="display:none;">
+  <li class="listcontent">Personal</li>
+  <li id="task_personal">
+    (<%=@tasks.where(:type=> "Personal").count %> tasks)
+  </li>
+  <li><%= @c %> completed</li>
+  <li>0 due today</li>
+  <li>0 due tomorrow</li>
+  <li id="cmptaskp">
+    <%= link_to 'Completed', incompletepersonal_tasks_path, remote: true, method: :post, :id => 'perinc' %>
+    (<%=@tasks.where(:type=> "Personal",:completed => true).count %> )
+  </li>
+</ul>
+
+<ul id="liststd" style="display:none;">
+  <li class="listcontent">Study</li>
+  <li id="task_study">
+    (<%=@tasks.where(:type=> "Study").count %> tasks)
+  </li>
+  <li>0 due today</li>
+  <li>0 due tomorrow</li>
+</ul>
+
+<ul id="listwrk" style="display:none;">
+  <li class="listcontent">Work</li>
+  <li id="task_work">
+    (<%=@tasks.where(:type=> "Work").count %> tasks)
+  </li>
+  <li>0 due today</li>
+  <li>0 due tomorrow</li>
+</ul>
+
+<ul id="listall" style="display:none;">
+  <li class="listcontent">All Task</li>
+  <li id="task_all">
+    (<%=Task.count %> tasks)
+  </li>
+  <li>0 due today</li>
+  <li>0 due tomorrow</li>
+</ul>
+
+<ul id="infoinb" style="display:none;">
+  <%# debugger %>
+  <li id="tasklist"><b><%=@tasks.where(:type => "Inbox").first.content %></b></li>
+  <li>Due: <%=Time.now.strftime("%d, %B, %Y")%></li>
+  <li>Repeat: never</li>
+  <li>Time estimate: none</li>
+  <li>Tags: noneSet Tags (s)</li>
+  <li>Location: none</li>
+  <li>URL: noneSet URL (u)</li>
+  <li>Postponed: 1 time</li>
+  <li>Shared with: no one</li>
+  <li>Notes: 0</li>
+</ul>
+
+<ul id="listicon">
+  <li>
+  <img class="noteaddicon icon" alt="Print" src="/assets/ico_print.gif">
+  <a class="icontext" target="_blank" href="# id="printlista">Print</a>
+  </li>
+  <li>
+  <img class="noteaddicon icon" alt="Print" src="/assets/ico_export.gif">
+  <a class="icontext" target="_blank" href="#" id="printlista">iCalendar</a>
+  </li>
+  <li>
+  <img class="noteaddicon icon" alt="Print" src="/assets/ico_export.gif">
+  <a class="icontext" target="_blank" href="#" id="printlista">iCa(Events)</a>
+  </li>
+  <li>
+  <img class="noteaddicon icon" alt="Print" src="/assets/ico_feed_blu.gif">
+  <a class="icontext" target="_blank" href="#" id="printlista">Atom</a>
+  </li>
+</ul>
+
+
+  

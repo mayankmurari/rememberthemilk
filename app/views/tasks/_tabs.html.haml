@@ -1,0 +1,33 @@
+.xtoolbox_actions
+  %form
+    %div{style: "margin-top:20px;"}
+      %input.xtoolbox_button{type: "submit", value: "Complete"}/
+      %input.xtoolbox_button{type: "submit", value: "Postpone"}/
+      .btn-group
+        %button.btn.btn-default.btn-xs.dropdown-toggle{"data-toggle" => "dropdown", type: "button"}
+          More Actions...
+          %span.caret
+        %ul.dropdown-menu
+          %li ---
+          %li Send to..
+          %li Share With..
+          %li Send to..
+          %li Duplicate Task
+          %li Delete Task
+          %li ---
+          %li Prioritize...
+          %li ..Set Priority 1
+          %li ..Set Priority 2
+          %li ..Set Priority 3
+          %li Set No Priority
+          %li ..Move Priority Up
+          %li ..Move Priority Down
+          %li ---
+= form_for (@task), remote: true do |f|
+  .field.clearfix
+    = f.text_field :content
+  .actions
+    = f.submit
+%ul.tasklist
+  - @tasks.each do |task|
+    %li= task.content

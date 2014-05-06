@@ -1,0 +1,130 @@
+!!!
+%html
+  %head
+    %title Rememberthemilk
+    = stylesheet_link_tag    "application", media: "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    .page-header
+      .container
+        %span.pull-left Welcome
+        %span.pull-right= link_to 'Login', user_session_path
+        %span.pull-right Already a member?
+    .container
+      .header
+        %ul.nav.nav-pills.pull-right
+          %li
+            %a{href: "#"} Home
+          %li= link_to 'SignUp', new_user_registration_path
+          %li
+            %a{href: "#"} App
+          %li
+            %a{href: "#"} Blog
+          %li
+            %a{href: "#"} Help
+        = image_tag 'logo2.png'
+    - flash.each do |key, value|
+      %div{class: "alert alert-#{key}"}= value
+    = yield
+    %hr/
+    .container
+      .row
+        .col-md-2.col-xs-2.col-sm-2
+          %li.footer-nav
+            %a.footnavtitle{href: "/signup/"} Accounts
+            %ul
+              %li
+                %a{href: "/signup/"} Sign Up (Free!)
+              %li
+                %a{href: "/login/"} Login
+              %li
+                %a{href: "/tour/"} Learn More
+              %li
+                = link_to 'Upgrade to', '#'
+                = image_tag 'ico_pro.gif'
+        .col-md-2.col-xs-2.col-sm-2
+          %li.footer-nav
+            %a.footnavtitle{href: "/about/"} About
+            %ul
+              %li
+                %a{href: "/about/"} Our Story
+              %li
+                %a{href: "/about/jobs.rtm"} Jobs
+              %li
+                %a{href: "/about/press.rtm"} Press
+              %li
+                %a{href: "http://blog.rememberthemilk.com/"} English Blog
+              %li
+                %a{href: "http://blog.rememberthemilk.jp/"} 日本語 Blog
+              %li
+                %a{href: "/about/contact.rtm"} Contact Us
+        .col-md-2.col-xs-2.col-sm-2
+          %li.footer-nav
+            %a.footnavtitle{href: "/services/"} Apps
+            %ul
+              %li
+                %a{href: "/services/android/"} Android
+              %li
+                %a{href: "/services/blackberry/"} BlackBerry 10
+              %li
+                %a{href: "/services/email/"} Email
+              %li
+                %a{href: "/services/evernote/"} Evernote
+              %li
+                %a{href: "/services/gmail/"} Gmail
+              %li
+                %a{href: "/services/googlecalendar/"} Google Calendar
+              %li
+                %a{href: "/services/ipad/"} iPad
+              %li
+                %a{href: "/services/iphone/"} iPhone/iPod touch
+              %li
+                %a{href: "/services/milksync/outlook/"} Microsoft Outlook
+              %li
+                %a{href: "/services/siri/"} Siri
+              %li
+                %a{href: "/services/twitter/"} Twitter
+              %li
+                %a{href: "/services/webapp/"} Web app
+        .col-md-2.col-xs-2.col-sm-2
+          %li.footer-nav
+            %a.footnavtitle{href: "/forums/"} Community
+            %ul
+              %li
+                %a{href: "/forums/help/"} Help Forum
+              %li
+                %a{href: "/forums/ideas/"} Vote on Ideas
+              %li
+                %a{href: "/forums/tips/"} Tips & Tricks
+              %li
+                %a{href: "/services/tester/"} Tester Program
+              %li
+                %a{href: "/services/translate/"} Translations
+              %li
+                %a{href: "/services/api/"} API
+        .col-md-2.col-xs-2.col-sm-2
+          %li.footer-nav
+            %a.footnavtitle{href: "/help/"} Help
+            %ul
+              %li
+                %a{href: "/help/"} Help Center
+              %li
+                %a{href: "/help/guide/"} Getting Started
+              %li
+                %a{href: "http://status.rememberthemilk.com/"} System Status
+              %li
+                %a{href: "/help/contact/"} Help by Email
+              %li.footer-nav-help-social
+                %a{href: "http://twitter.com/rememberthemilk"}
+                  = image_tag 'ico_twitter_16.png'
+                %a{href: "http://www.facebook.com/rememberthemilk"}
+                  = image_tag 'ico_facebook_16.png'
+                %a{href: "http://google.com/+RememberTheMilk"}
+                  = image_tag 'ico_googleplus_16.png'
+      #footer-legal
+        2014 Remember The Milk
+        %span.divider |
+        %a{href: "/help/terms.rtm"} Terms of Use
+        %span.divider |
+        %a{href: "/help/privacy.rtm"} Privacy Policy

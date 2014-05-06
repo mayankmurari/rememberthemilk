@@ -1,0 +1,4 @@
+%li#inctask
+  = link_to 'Incompleted', tasks_path
+  =@task.where(:type=> "Inbox",:completed => false).count 
+  

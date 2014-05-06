@@ -1,0 +1,37 @@
+.nav > li > a:hover, .nav > li > a:focus {
+  text-decoration: none;
+  background-color: #fff;
+  background: none no-repeat right top;
+}
+.nav-tabs > li > a {
+  border-radius: 8px 8px 0 0;
+}
+.nav > li > a {
+  padding: 4px 15px;
+}
+.form-control {
+  margin-top: 10px;
+}
+.dropdown-menu {
+  min-width: 130px;
+}
+.dropdown-menu > li > a {
+  height: 20px;
+  text-align: left;
+  padding: 3px;
+}
+.dropdown-menu > li > a:hover {
+  background-color: #166EC7;
+  height: 20px;
+  text-align: left;
+  padding-left: -10px;
+  padding: 3px;
+}
+.nav-tabs > li {
+  margin-bottom: -2px;
+}
+#menu {
+  left: -8%;
+  min-width: 100px;
+  top: 100%;
+}

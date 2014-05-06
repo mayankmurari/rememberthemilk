@@ -1,0 +1,56 @@
+<div class="xtoolbox_actions">
+  <form>
+    <div style="margin-top:20px;">
+      <input type="submit" value="Complete" class="xtoolbox_button">
+      <input type="submit" value="Postpone" class="xtoolbox_button">
+      <div class="btn-group">
+        <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown">
+          More Actions...<span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li>---</li>
+          <li>Send to..</li>
+          <li>Share With..</li>
+          <li>Send to..</li>
+          <li>Duplicate Task</li>
+          <li>Delete Task</li>
+          <li>---</li>
+          <li>Prioritize...</li>
+          <li>..Set Priority 1</li>
+          <li>..Set Priority 2</li>
+          <li>..Set Priority 3</li>
+          <li>Set No Priority</li>
+          <li>..Move Priority Up</li>
+          <li>..Move Priority Down</li>
+          <li>---</li>
+        </ul>
+      </div>
+    </div>
+  </form>
+</div>
+<%= form_for Task.new do |f| %>
+  
+  <div class="field">
+    <%= f.text_field :content %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+</br>
+
+<% @tasks.each do |task| %>
+  <ul class="tasklist">
+
+    <li><%= task.content %></li>
+  </ul>
+<% end %>
+ 
+
+
+
+
+
+
+
+

@@ -1,0 +1,3 @@
+class Study < Task
+  
+end

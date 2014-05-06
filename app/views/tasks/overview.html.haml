@@ -1,0 +1,41 @@
+.container
+  .row
+    .col-md-8
+      %div{style: "padding: 0.6em 1.5em 0.9em 1.5em;border:1px solid #D4D4D4;border-radius:5px;margin-bottom:20px;"}
+        %div{style: "color: #8B8B8B; padding-bottom: 0.8em; font-weight: bold;"}
+          Remember The Milk News
+        #overviewnews_text{style: "padding-bottom: 0.5em; line-height: 1.3em; color: #575757"}
+          Tips & Tricks Tuesday: A Smart List to find next actions. See the
+          %a{href: "#", target: "_blank"} blog
+          for more details, and learn how you can win a 1 year Pro account by sharing your best tip or trick. For the latest updates from the team, follow us on
+          = succeed "," do
+            %a{href: "#", target: "_blank"} Twitter
+          = succeed "," do
+            %a{href: "#", target: "_blank"} Facebook
+          = succeed "." do
+            %a{href: "#", target: "_blank"} Google+
+        #overviewnews_date{style: "font-size: 0.95em; color: #999;"}
+          Posted on Wednesday, April 2, 2014
+      %ul.nav.nav-tabs
+        %li.active
+          %a{"data-toggle" => "tab", href: "#today"} Today
+        %li
+          %a{"data-toggle" => "tab", href: "#tomorrow"} Tomorrow
+        %li
+          %a{"data-toggle" => "tab", href: "#overdue"} Overdue
+      .tab-content.hometabs
+        #today.tab-pane.active
+        #tomorrow.tab-pane hi
+        #overdue.tab-pane
+    .col-md-4
+      \#{link_to "Continue to tasks >>", tasks_path}  
+      %div{style: "border:1px solid #D4D4D4;padding:5px;border-radius:5px;margin:5px;"}
+        %div{style: "height:50px;width:50px;border:1px solid #D4D4D4;margin:5px;"}
+        %div{style: "height:50px;width:50px;border:1px solid #D4D4D4;margin:5px;"}
+        %div{style: "height:50px;width:50px;border:1px solid #D4D4D4;margin:5px;"}
+      %div{style: "border:1px solid #D4D4D4;padding:20px;border-radius:5px;margin:5px;"}
+        %span inbox
+        %span personal
+        %span sent
+        %span study
+        %span work
