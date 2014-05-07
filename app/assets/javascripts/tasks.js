@@ -32,61 +32,61 @@ $(document).ready(function(){
 $(document).ready(function(){
   $("li[id^=taski_]").hover(function () {
     $("#listinb, #listicon").toggle();
-    $("#infoinb").toggle();   
+    $("#infoinb").toggle();
   });
 });
 $(document).ready(function(){
   $("li[id^=taski_]").click(function () {
     $("#listinb, #listicon").toggle();
-    $("#infoinb").toggle();   
+    $("#infoinb").toggle();
   });
 });
 $(document).ready(function(){
   $("li[id^=taskp_]").hover(function () {
     $("#listper, #listicon").toggle();
-    $("#infoinb").toggle();   
+    $("#infoinb").toggle();
   });
 });
 $(document).ready(function(){
   $("li[id^=taskp_]").click(function () {
     $("#listper, #listicon").toggle();
-    $("#infoinb").toggle();   
+    $("#infoinb").toggle();
   });
 });
 $(document).ready(function(){
   $("li[id^=tasks_]").hover(function () {
     $("#liststd, #listicon").toggle();
-    $("#infoinb").toggle();   
+    $("#infoinb").toggle();
   });
 });
 $(document).ready(function(){
   $("li[id^=tasks_]").click(function () {
     $("#liststd, #listicon").toggle();
-    $("#infoinb").toggle();   
+    $("#infoinb").toggle();
   });
 });
 $(document).ready(function(){
   $("li[id^=taskw_]").hover(function () {
     $("#listwrk, #listicon").toggle();
-    $("#infoinb").toggle();   
+    $("#infoinb").toggle();
   });
 });
 $(document).ready(function(){
   $("li[id^=taskw_]").click(function () {
     $("#listwrk, #listicon").toggle();
-    $("#infoinb").toggle();   
+    $("#infoinb").toggle();
   });
 });
 $(document).ready(function(){
   $("li[id^=taskall_]").hover(function () {
     $("#listall, #listicon").toggle();
-    $("#infoinb").toggle();   
+    $("#infoinb").toggle();
   });
 });
 $(document).ready(function(){
   $("li[id^=taskall_]").click(function () {
     $("#listall, #listicon").toggle();
-    $("#infoinb").toggle();   
+    $("#infoinb").toggle();
   });
 });
 
@@ -136,20 +136,22 @@ $(document).ready(function() {
      $(this).addClass('contentglow');
    }).blur(function() {
     $(this).removeClass('contentglow');
-  })  
+  })
 });
 
 // ajax loader
 $(function() {
-  $('#loading-indicator').hide(); 
-  $(document)  
+  $('#loading-indicator').hide();
+  $(document)
     .ajaxStart(function() {
-      $('#loading-indicator').show(); 
+      $('#loading-indicator').show();
     })
     .ajaxStop(function() {
-      $('#loading-indicator').hide(); 
+      $('#loading-indicator').hide();
   });
 });
+
+
 
 
 

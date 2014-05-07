@@ -21,3 +21,5 @@
 
 en:
   hello: "Hello world"
+  tasks:
+    added: "Your task has been successfulyy added."

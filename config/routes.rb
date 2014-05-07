@@ -9,12 +9,12 @@ Rememberthemilk::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
-  match '/home',    to: 'home#index',           via: 'get' 
-  # devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks"}
+  match '/home',    to: 'home#index', via: 'get' 
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", confirmations: 'confirmations'}
   match '/home',  to: 'home#create',    via: 'post'
   match '/overview', to: 'tasks#overview', via: 'get'
   match '/locations', to: 'tasks#locations', via: 'get'
-  devise_for :users, controllers: { confirmations: 'confirmations' }
+  # devise_for :users, controllers: { confirmations: 'confirmations' }
   resources :tasks do
     collection do
       post 'complete'

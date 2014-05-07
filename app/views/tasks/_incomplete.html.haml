@@ -11,10 +11,10 @@
     %b.caret
     %ul#menu1.dropdown-menu{"aria-labelledby" => "drop", role: "menu"}
       %li#set1li 
-        %a.drpdown= submit_tag "Move to Inbox", :name => 'inmovetoinb', id: 'movetoinb', class: 'droplist'
-        %a.drpdown= submit_tag "Move to Personal", :name => 'inmovetopers', id: 'movetopers', class: 'droplist'
-        %a.drpdown= submit_tag "Move to Work", :name => 'inmovetowork', id: 'movetowork', class: 'droplist'
-        %a.drpdown= submit_tag "Move to Study", :name => 'inmovetostd', id: 'movetostd', class: 'droplist'   
+        %a.drpdown= submit_tag "Inbox", id: 'movetoinb', class: 'droplist'
+        %a.drpdown= submit_tag "Personal", id: 'movetopers', class: 'droplist'
+        %a.drpdown= submit_tag "Work", id: 'movetowork', class: 'droplist'
+        %a.drpdown= submit_tag "Study", id: 'movetostd', class: 'droplist'   
     - @task.inboxcompleted.each do |task|
       = check_box_tag "task_id[]", task.id
       %li.tasks{id: "taski_#{task.id}"}

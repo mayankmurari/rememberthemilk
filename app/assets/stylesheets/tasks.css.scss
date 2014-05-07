@@ -56,9 +56,9 @@ div.appfootercontent a {
 
 }
 .form_actions {
-    padding-left: 20px;
-    margin-bottom: 20px;
-    margin-top: 20px;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 .hometabs {
   border: 1px solid #DDDDDD;
@@ -101,7 +101,7 @@ input[id^=taski] {
 
 input[id^=task_id] {
   float: left;
-  margin-left: 28px;
+  margin-left: 10px;
   margin-right: 21px !important;
   margin-top: 10px;
   width: 12px;
@@ -212,7 +212,7 @@ li.tasks {
 }
 .drpi {
   left: 30%;
-  top: 34%;
+  top: 18%;
 }
 .drpp {
   left: 30%;
@@ -243,7 +243,7 @@ li.tasks {
 .statusbar {
   height: 32px;
   width: 10px;
-  margin-left: -60px;
+  margin-left: -61px;
   display: inline;
   float: left;
   border-bottom: 1px solid #CACACA;
@@ -297,7 +297,7 @@ li.tasks {
 .uncompletebutton {
   width: 95px;
   position: relative;
-  margin-top: 20px;
+  margin-top: 48px;
   left: 20px;
   display: block;
 }
@@ -317,19 +317,7 @@ hr.seperator {
   position: relative;
   top: -50px;
 }
-ul#inbox {
-  margin-bottom: -22px;
-}
-ul#personal {
-  margin-bottom: -22px;
-}
-ul#work {
-  margin-bottom: -22px;
-}
-ul#study {
-  margin-bottom: -22px;
-}
-ul#all {
+.tasklist {
   margin-bottom: -22px;
 }
 a#inb {
@@ -357,9 +345,8 @@ a#inb {
   top: 58px;
  }
 .arrow {
-    background: url("./ico_arr.gif") no-repeat scroll 3px center rgba(0, 0, 0, 0);
+  background: url("./ico_arr.gif") no-repeat scroll 3px center rgba(0, 0, 0, 0);
 }
-
 
 
 

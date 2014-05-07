@@ -11,4 +11,15 @@ class Task < ActiveRecord::Base
   scope :personalcompleted, -> {where(:type=> "Personal", :completed=>true).order(priority: :asc)}
   scope :alltasks, -> {where(:completed=>false).order(priority: :desc)}
   
+  scope :order_tasks, lambda {|order_by, asc_or_desc| order("#{order_by} #{asc_or_desc}")}
+  scope :priority, lambda {|set_priority,task_id| where(:id => task_id).update_all("priority=#{set_priority}")}
+  scope :move, lambda {|move_to,task_id| where(:id => task_id).update_all("type='#{move_to}'")}
+  scope :move_incomplete, lambda {|move_to_incomplete,task_id| where(:id => task_id).update_all("type='#{move_to_incomplete}'")}
+
+  scope :completed, lambda{|task_id| where(:id => task_id).update_all(["completed=?",true])}
+  scope :incompleted, lambda{|task_id| where(:id => task_id).update_all(["completed=?",false])}
+  scope :postpone, lambda{|task_id| where(:id => task_id).update_all(["postpone=?",Time.now + 1.day])}
+
+
+
 end

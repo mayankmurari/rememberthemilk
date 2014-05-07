@@ -1,27 +1,29 @@
 
 <%if @task.type == "Inbox" %> 
-  $("#complete_form_inb").append("<li id='taski_<%= @task.id %>' class='tasks'><span id='contenttext'><%= @task.content %></span></li>");
-  $("li#taski_<%= @task.id %>").prepend('<input type="checkbox" name="myCheckbox" id="chki_<%= @task.id %>"/>');
-  $("li#taski_<%= @task.id %>").addClass("flash").delay(350).queue(function(next){$(this).removeClass("flash");next();});
-  $("#task_inbox").html("<li>(<%= @counti+1%> tasks)</li>") 
+  // $("#complete_form_inb").append("<li id='taski_<%= @task.id %>' class='tasks'><span id='contenttext'><%= @task.content %></span></li>");
+  // $("li#taski_<%= @task.id %>").prepend('<input type="checkbox" name="myCheckbox" id="chki_<%= @task.id %>"/>');
+  // $("li#taski_<%= @task.id %>").addClass("flash").delay(350).queue(function(next){$(this).removeClass("flash");next();});
+  // $("#task_inbox").html("<li>(<%= @counts[:inbox]+1%> tasks)</li>"); 
+  $("#complete_form_inb").append('<%= escape_javascript(render(:partial => 'tasklist')) %>');
+
 
 <%elsif @task.type == "Personal"%> 
   $("#complete_form_per").append("<li id='taskp_<%= @task.id %>' class='tasks'><span id='contenttext'><%= @task.content %></span></li>");
   $("li#taskp_<%= @task.id %>").prepend('<input type="checkbox" class="cbk" name="myCheckbox" id="chkp_<%= @task.id %>"/>');
   $("li#taskp_<%= @task.id %>").addClass("flash").delay(350).queue(function(next){$(this).removeClass("flash");next();});
-  $("#task_personal").html("<li>(<%= @countp+1%> tasks)</li>")
+  $("#task_personal").html("<li>(<%= @counts[:personal]+1%> tasks)</li>");
 
 <%elsif @task.type == "Study"%> 
   $("#complete_form_std").append("<li id='tasks_<%= @task.id %>' class='tasks'><span id='contenttext'><%= @task.content %></span></li>");
   $("li#tasks_<%= @task.id %>").prepend('<input type="checkbox" class="cbk" name="myCheckbox" id="chks_<%= @task.id %>"/>');
   $("li#tasks_<%= @task.id %>").addClass("flash").delay(350).queue(function(next){$(this).removeClass("flash");next();});
-  $("#task_study").html("<li>(<%= @counts+1%> tasks)</li>")
+  $("#task_study").html("<li>(<%= @counts[:study]+1%> tasks)</li>");
 
 <%elsif @task.type == "Work"%> 
   $("#complete_form_work").append("<li id='taskw_<%= @task.id %>' class='tasks'><span id='contenttext'><%= @task.content %></span></li>");  
   $("li#taskw_<%= @task.id %>").prepend('<input type="checkbox" class="cbk" name="myCheckbox" id="chkw_<%= @task.id %>"/>');
   $("li#taskw_<%= @task.id %>").addClass("flash").delay(350).queue(function(next){$(this).removeClass("flash");next();});
-  $("#task_work").html("<li>(<%= @countw+1%> tasks)</li>")
+  $("#task_work").html("<li>(<%= @counts[:work]+1%> tasks)</li>");
 
 <%elsif @task.type == "Sent"%> 
   $("ul#sent").append("<li id='task_<%= @task.id %>' class='tasks'>span id='contenttext'><%= @task.content %></span></li>");
@@ -29,7 +31,7 @@
 <%elsif @task.type == "All" %> 
   $("#complete_form_all").append("<li id='task_<%= @task.id %>' class='tasks'><span id='contenttext'><%= @task.content %></span></li>");
   $("li#task_<%= @task.id %>").prepend('<input type="checkbox" class="cbk" name="myCheckbox" id="chkw_<%= @task.id %>"/>');
-  $("#task_all").html("<li>(<%= @counta+1%> tasks)</li>")
+  $("#task_all").html("<li>(<%= @counts[:all]+1%> tasks)</li>");
   $("li#task_all<%= @task.id %>").addClass("flash").delay(350).queue(function(next){$(this).removeClass("flash");next();});
 
 <% end %>

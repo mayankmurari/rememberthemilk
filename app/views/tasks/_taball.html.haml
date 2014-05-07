@@ -37,9 +37,9 @@
     %li{role: "presentation"}
       %a.drpdown= submit_tag "Move to Study", :name => 'movetostd', id: 'movetostd', class: 'droplist'
   %hr.seperator       
-  - @tasks.alltasks.each do |task|
-    = check_box_tag "task_id[]", task.id 
+  - @tasks.alltasks.each do |task| 
     %li.tasks{id: "taskall_#{task.id}"}
+      = check_box_tag "task_id[]", task.id
       - if task.priority==1
         %div.statusbar.prior1{id: "taskbar_#{task.id}"}
       - elsif  task.priority==2
