@@ -59,7 +59,7 @@
 
 <ul id="infoinb" style="display:none;">
   <%# debugger %>
-  <li id="tasklist"><b><%=@tasks.where(:type => "Inbox").first.content %></b></li>
+  <!-- <li id="tasklist"><b><%#=@tasks.where(:type => "Inbox").first.content %></b></li> -->
   <li>Due: <%=Time.now.strftime("%d, %B, %Y")%></li>
   <li>Repeat: never</li>
   <li>Time estimate: none</li>
