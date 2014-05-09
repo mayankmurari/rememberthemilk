@@ -13,12 +13,14 @@
   = submit_tag "Completed", class: "completebutton", name: "completebutton"
   = submit_tag "Postpone", class: "postponebutton", name: "postponebutton"
   = submit_tag "Delete", class: "submitbutton", :name => 'deletebutton', :method => :delete
+
   %li.dropdown
   %adrpdown#drop6.moreactions{"data-toggle" => "dropdown", href: "#", role: "button"}
     More Actions..
     %b.caret1
   %ul#menu3.dropdown-menu.drpi{"aria-labelledby" => "drop6", role: "menu"}
     %li{role: "presentation"}
+      %span.drpdwn_span Set Priority
       %a.drpdown= submit_tag "1",  id: 'set1', class: 'droplist'
     %li{role: "presentation"}
       %a.drpdown= submit_tag "2",  id: 'set2', class: 'droplist'
@@ -31,6 +33,7 @@
       %a.drpdown= submit_tag "Move Down", :name => 'setdown', id: 'setdown', class: 'droplist' 
     %li.divider{role: "presentation"}
     %li{role: "presentation"}
+      %span.drpdwn_span Move to..
       %a.drpdown= submit_tag "Inbox", id: 'movetoinb', class: 'droplist'
     %li{role: "presentation"}
       %a.drpdown= submit_tag "Personal", id: 'movetopers', class: 'droplist'
@@ -39,19 +42,15 @@
     %li{role: "presentation"}
       %a.drpdown= submit_tag "Study", id: 'movetostd', class: 'droplist'
   %hr.seperator   
-    / - @tasks.inboxincompleted.each do |task|
-    /   %li.tasks{id: "taski_#{task.id}"}
-    /     = check_box_tag "task_id[]", task.id
-    /     - if task.priority==1
-    /       %div.statusbar.prior1{id: "taskbar_#{task.id}"}
-    /     - elsif  task.priority==2
-    /       %div.statusbar.prior2{id: "taskbar_#{task.id}"}
-    /     - elsif  task.priority==3
-    /       %div.statusbar.prior3{id: "taskbar_#{task.id}"} 
-    /     - elsif  task.priority==0
-    /       %div.statusbar.prior0{id: "taskbar_#{task.id}"}   
-    /     %span#contenttext= task.content 
+  %ul#inboxtask
     = render 'tasklist'
+%span.select Select:
+%button#check_all{type: "button"}
+  All  
+%button#due_tomorrow{type: "button"}
+  Due Tomorrow     
+%button#uncheck_all{type: "button"}
+  None   
 
 
 = form_tag('/tasks', method: :get)      
@@ -66,6 +65,7 @@
       %a.drpdown= submit_tag "postpone", id: 'setd', class: 'droplist', name: "order_by", value: "postpone"
     %li{role: "presentation"}
       %a.drpdown= submit_tag "content",  id: 'setn', class: 'droplist', name: "order_by", value: "content"
-      
+  
+
 
     

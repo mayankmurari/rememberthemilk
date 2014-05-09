@@ -1,0 +1,16 @@
+
+- @searchresult.each do |task|
+  %li.tasks{id: "taski_#{task.id}"}
+    = check_box_tag "task_id[]", task.id
+    - if task.priority==1
+      %div.statusbar.prior1{id: "taskbar_#{task.id}"}
+    - elsif  task.priority==2
+      %div.statusbar.prior2{id: "taskbar_#{task.id}"}
+    - elsif  task.priority==3
+      %div.statusbar.prior3{id: "taskbar_#{task.id}"} 
+    - elsif  task.priority==0
+      %div.statusbar.prior0{id: "taskbar_#{task.id}"}   
+    %span#contenttext= task.content 
+
+
+

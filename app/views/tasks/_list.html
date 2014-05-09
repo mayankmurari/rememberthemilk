@@ -4,10 +4,10 @@
     (<%=@tasks.where(:type=> "Inbox").count %> tasks)
   </li>
   <li>
-    (<%=@tasks.where(:type=> "Inbox",:postpone => Time.now + 0.day).count %> due today)
+    (<%=@tasks.where(:type=> "Inbox",:postpone => Date.today).count %> due today)
   </li>
   <li>
-    (<%=@tasks.where(:type=> "Inbox",:postpone => Time.now + 1.day).count %> due tomorrow)
+    (<%=@tasks.where(:type=> "Inbox",:postpone => Date.tomorrow).count %> due tomorrow)
   </li>
   <li id="cmptaski">
     <%= link_to 'Completed', incomplete_tasks_path, remote: true, method: :post, :id => 'inbinc'%>

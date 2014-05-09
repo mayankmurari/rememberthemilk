@@ -151,6 +151,25 @@ $(function() {
   });
 });
 
+// check/uncheck
+$(document).ready(function(){
+  $('#check_all').click(function(){ 
+    $('input[type="checkbox"]').prop('checked', true); 
+  });
+});
+$(document).ready(function(){
+  $('#uncheck_all').click(function(){ 
+    $('input[type="checkbox"]').prop('checked', false); 
+  });
+});
+$('#search').keydown(function(e) {
+    if (e.keyCode == 13) {
+      $('#search_form').submit();
+    }
+});
+
+
+
 
 
 

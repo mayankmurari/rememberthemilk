@@ -17,18 +17,26 @@ pre {
   padding: 10px;
   font-size: 11px;
 }
-
+a.tabs {
+  color: #FFF;
+}
 
 a {
-  color: #FFFFFF;
+  // color: #FFF;
   font-weight: bold;
   &:visited {
     color: #000;
   }
   &:hover {
-    // color: #000;
-    // background-color: #fff;
+    color: #000;
+    background-color: #fff;
     text-decoration: none;
+  }
+}
+a#al {
+  color: #fff;
+  &:hover {
+    color: #000;
   }
 }
 

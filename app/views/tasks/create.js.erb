@@ -1,17 +1,16 @@
 
 <%if @task.type == "Inbox" %> 
-  // $("#complete_form_inb").append("<li id='taski_<%= @task.id %>' class='tasks'><span id='contenttext'><%= @task.content %></span></li>");
-  // $("li#taski_<%= @task.id %>").prepend('<input type="checkbox" name="myCheckbox" id="chki_<%= @task.id %>"/>');
-  // $("li#taski_<%= @task.id %>").addClass("flash").delay(350).queue(function(next){$(this).removeClass("flash");next();});
-  // $("#task_inbox").html("<li>(<%= @counts[:inbox]+1%> tasks)</li>"); 
-  $("#complete_form_inb").append('<%= escape_javascript(render(:partial => 'tasklist')) %>');
+  $("ul#inboxtask").html('<%= escape_javascript(render(:partial => 'tasklistinbox')) %>');
+  $("li#taski_<%= @task.id %>").addClass("flash").delay(350).queue(function(next){$(this).removeClass("flash");next();});
+  $("#task_inbox").html("<li>(<%= @counts[:inbox]+1%> tasks)</li>"); 
 
 
 <%elsif @task.type == "Personal"%> 
-  $("#complete_form_per").append("<li id='taskp_<%= @task.id %>' class='tasks'><span id='contenttext'><%= @task.content %></span></li>");
-  $("li#taskp_<%= @task.id %>").prepend('<input type="checkbox" class="cbk" name="myCheckbox" id="chkp_<%= @task.id %>"/>');
-  $("li#taskp_<%= @task.id %>").addClass("flash").delay(350).queue(function(next){$(this).removeClass("flash");next();});
-  $("#task_personal").html("<li>(<%= @counts[:personal]+1%> tasks)</li>");
+  // $("#complete_form_per").append("<li id='taskp_<%= @task.id %>' class='tasks'><span id='contenttext'><%= @task.content %></span></li>");
+  // $("li#taskp_<%= @task.id %>").prepend('<input type="checkbox" class="cbk" name="myCheckbox" id="chkp_<%= @task.id %>"/>');
+  // $("li#taskp_<%= @task.id %>").addClass("flash").delay(350).queue(function(next){$(this).removeClass("flash");next();});
+  // $("#task_personal").html("<li>(<%= @counts[:personal]+1%> tasks)</li>");
+  $("ul#personaltask").html('<%= escape_javascript(render(:partial => 'tasklistpersonal')) %>');
 
 <%elsif @task.type == "Study"%> 
   $("#complete_form_std").append("<li id='tasks_<%= @task.id %>' class='tasks'><span id='contenttext'><%= @task.content %></span></li>");

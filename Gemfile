@@ -32,11 +32,15 @@ gem 'turbolinks'
 gem 'bootstrap-sass', '3.1.1.0'
 gem 'sprockets', '2.11.0'
 gem 'bcrypt-ruby', '3.1.2'
+gem "default_value_for", "~> 3.0.0"
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
 gem 'sendgrid'
+
+gem 'sunspot_rails'
+gem 'sunspot_solr'
 
 
 

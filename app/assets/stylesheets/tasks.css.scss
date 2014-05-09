@@ -347,7 +347,57 @@ a#inb {
 .arrow {
   background: url("./ico_arr.gif") no-repeat scroll 3px center rgba(0, 0, 0, 0);
 }
+ul#inboxtask {
+  padding-left: 0px;
+}
+ul#personaltask {
+  padding-left: 0px;
+}
+.drpdwn_span {
+  font-size: 11px;
+  padding-left: 8px;
+  color: #999999;
+}
+#check_all {
+  position: absolute;
+  top: 66px;
+  left: 70px;
+  display: block;
+  background: none;
+  font-size: 11px;
+  border:none;
+  text-decoration: underline;
+  color: #2678CB;
+}
+#uncheck_all {
+  position: absolute;
+  top: 66px;
+  left: 178px;
+  display: block;
+  background: none;
+  font-size: 11px;
+  border:none;
+  text-decoration: underline;
+  color: #2678CB;
 
+}
+#due_tomorrow {
+  position: absolute;
+  top: 66px;
+  left: 90px;
+  display: block;
+  background: none;
+  font-size: 11px;
+  border:none;
+  text-decoration: underline;
+  color: #2678CB;
+}
+.select {
+  position: absolute;
+  top: 66px;
+  left: 32px;
+  font-size: 11px;
+}
 
 
 

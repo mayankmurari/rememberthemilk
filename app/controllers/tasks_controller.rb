@@ -7,6 +7,15 @@ class TasksController < ApplicationController
   # ["priority", "postpone", "content"]
   
   def index
+    
+    respond_to do |format|
+      format.html {}
+      format.js {}
+    end  
+    @search = Task.search do 
+      fulltext params[:search] 
+    end
+    @searchresult = @search.results
     @task =  Task.new
     @tasks = Task.all
     @count = @tasks.count
@@ -44,6 +53,7 @@ class TasksController < ApplicationController
   end
  
   def complete
+    
     @set_priority = ["1","2","3"].include?(params[:commit]) ? params[:commit] : 0
     Task.priority(@set_priority,params[:task_id])
     @move_to = ["Inbox", "Personal", "Work", "Study"].include?(params[:commit]) ? params[:commit] : "Inbox"

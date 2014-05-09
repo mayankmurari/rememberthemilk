@@ -38,19 +38,8 @@
     %li{role: "presentation"}
       %a.drpdown= submit_tag "Move to Study", :name => 'movetostd', id: 'movetostd', class: 'droplist'
   %hr.seperator       
-  - @tasks.personalincompleted.each do |task|
-    / = check_box_tag "task_id[]", task.id 
-    %li{:id => "taskp_#{task.id}", :class => 'tasks'}
-      = check_box_tag "task_id[]", task.id 
-      - if task.priority==1
-        %div.statusbar.prior1{id: "taskbar_#{task.id}"}
-      - elsif  task.priority==2
-        %div.statusbar.prior2{id: "taskbar_#{task.id}"}
-      - elsif  task.priority==3
-        %div.statusbar.prior3{id: "taskbar_#{task.id}"} 
-      - elsif  task.priority==0
-        %div.statusbar.prior0{id: "taskbar_#{task.id}"}  
-      %span#contenttext= task.content
+  %ul#personaltask
+    = render 'tasklistpersonal'
 
 = form_tag('/tasks', method: :get)
 %li.dropdown.moreactions_sort
