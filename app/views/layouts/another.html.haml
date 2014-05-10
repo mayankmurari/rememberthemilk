@@ -30,7 +30,6 @@
         %p#notice= flash[:notice] 
       .pull-right.time
         %span.time= Time.now.strftime("%A, %d, %B, %Y | %I:%M ")
-        / %input.form-control{placeholder: "Search...", type: "text"}/
         = form_tag tasks_path, :method => :get, :id => 'search_form',:autocomplete => :off, remote: true do
           = text_field_tag :search, params[:search] 
           #searchicon

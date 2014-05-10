@@ -168,6 +168,64 @@ $('#search').keydown(function(e) {
     }
 });
 
+// inplace editing hover
+$(document).ready(function(){
+  $(".editable").hover(function(){
+    $(this).addClass("editHover");
+    },function(){
+      $(this).removeClass("editHover");
+  });
+});
+
+// edit form
+// $(document).ready(function(){
+//   $(".editable").dblclick( replaceHTML);
+// });
+// function replaceHTML()
+//     {
+//         oldText = $(this).html();
+                         
+//        $(this).html("<form id=\"edit_form\"><input type=\"text\" value=\""+ oldText +"\" class=\"edit\"></form> <a href=\"#\" class=\"btnSave\">Save changes</a> <a href=\"#\" class=\"btnDiscard\">Discard changes</a>");
+//     }
+
+
+// $(".btnDiscard").click(function(){
+//   $(this).parent().html(oldText);
+//     }
+// );
+
+//EDIT FORM COMPLETE
+$(document).ready(function(){
+  var oldText, newText;
+  $(".editable").hover(function(){
+    $(this).addClass("editHover");
+    },function(){
+    $(this).removeClass("editHover");
+  });
+   
+  $(".editable").dblclick(replaceHTML);
+     
+  $(".btnDiscard").click(function(){
+    $(this).parent().html(oldText).dblclick(replaceHTML);
+  });
+
+   function replaceHTML()
+  {
+    oldText = $(this).html();
+    $(this).html("<form id=\"edit_form\"><input type=\"text\" value=\""+ oldText +"\" class=\"editBox\"></form> <a href=\" \" class=\"btnSave\">Save changes</a><a href=\"\" class=\"btnDiscard\">Discard changes</a>");
+  }
+     
+});
+
+
+// submit edit form on click 
+$(document).ready(function(){
+  $('#edit_form').keydown(function(e) {
+    if (e.keyCode == 13) {
+      $('#edit_form').submit();
+    }
+  });
+});
 
 
 
